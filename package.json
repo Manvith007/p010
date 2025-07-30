@@ -1,0 +1,11 @@
+{
+  "name": "p010",
+  "version": "1.0.0",
+  "description": "Static website project",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(to right, #d32f2f, #e53935);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      position: relative;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .sidebar {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: #c62828;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #212121;
+    }
+
+    .container p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #ffe5e5;
+      padding: 20px;
+      border-radius: 10px;
+      width: 240px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #d32f2f;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #444;
+      font-size: 14px;
+    }
+
+    footer {
+      background-color: blue;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+      .container h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <div class="title">My Website</div>
+    <nav id="sidebar" class="sidebar">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1>Welcome to Our Healthcare Services</h1>
+      <p>
+        At My Website, we are dedicated to providing top-quality healthcare services to our community. 
+        Our team of experienced professionals is committed to your well-being and health.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h3>General Checkup</h3>
+          <p>Comprehensive health assessments to keep you in optimal condition.</p>
+        </div>
+        <div class="card">
+          <h3>Pediatrics</h3>
+          <p>Specialized care for infants, children, and adolescents.</p>
+        </div>
+        <div class="card">
+          <h3>Cardiology</h3>
+          <p>Advanced heart care and treatment from expert cardiologists.</p>
+        </div>
+        <div class="card">
+          <h3>Emergency Care</h3>
+          <p>24/7 emergency services to handle urgent medical situations.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Thank you for Visiting
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("sidebar");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+</body>
+</html>
